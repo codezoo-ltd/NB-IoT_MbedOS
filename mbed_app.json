@@ -1,0 +1,46 @@
+{
+	"config": {
+		"sock-type": "UDP",
+			"echo-server-hostname": {
+				"help": "Echo server host name.",
+				"value": "\"121.130.230.59\""
+			},
+			"echo-server-port": {
+				"help": "Echo server port number.",
+				"value": 5203
+			},
+			"trace-level": {
+				"help": "Options are TRACE_LEVEL_ERROR,TRACE_LEVEL_WARN,TRACE_LEVEL_INFO,TRACE_LEVEL_DEBUG",
+				"macro_name": "MBED_TRACE_MAX_LEVEL",
+				"value": "TRACE_LEVEL_INFO"
+			},
+			"modem_trace": {
+				"help": "Turns AT command trace on/off from the cellular modem, defaults to off",
+				"value": true
+			}		
+	},
+		"target_overrides": {
+			"*": {
+				"target.network-default-interface-type": "CELLULAR",
+				"mbed-trace.enable": false,
+				"lwip.ppp-enabled": false,
+				"platform.stdio-convert-newlines": true,
+				"platform.stdio-baud-rate": 115200,
+				"platform.default-serial-baud-rate": 9600,
+				"platform.stdio-buffered-serial": true,
+				"cellular.debug-at": false,
+				"nsapi.default-cellular-plmn": 0,
+				"nsapi.default-cellular-sim-pin": "\"1234\"",
+				"nsapi.default-cellular-apn": 0,
+				"nsapi.default-cellular-username": 0,
+				"nsapi.default-cellular-password": 0
+			}
+	},
+		"macros":[
+			"CELLULAR_DEVICE=SERCOMM_TPB23",
+			"MDMRXD=D0",
+			"MDMTXD=D1",
+			"MDMRTS=NC",
+			"MDMCTS=NC"
+		]
+}
