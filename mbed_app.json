@@ -3,11 +3,11 @@
 		"sock-type": "UDP",
 			"echo-server-hostname": {
 				"help": "Echo server host name.",
-				"value": "\"121.130.230.59\""
+				"value": "\"echo.mbedcloudtesting.com\""
 			},
 			"echo-server-port": {
 				"help": "Echo server port number.",
-				"value": 5203
+				"value": 7
 			},
 			"trace-level": {
 				"help": "Options are TRACE_LEVEL_ERROR,TRACE_LEVEL_WARN,TRACE_LEVEL_INFO,TRACE_LEVEL_DEBUG",

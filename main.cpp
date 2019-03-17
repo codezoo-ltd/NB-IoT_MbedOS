@@ -75,7 +75,7 @@ static void trace_close()
 }
 #endif // #if MBED_CONF_MBED_TRACE_ENABLE
 
-Thread dot_thread(osPriorityNormal, 512);
+Thread dot_thread(osPriorityNormal);
 
 void print_function(const char *format, ...)
 {
@@ -195,7 +195,7 @@ nsapi_error_t test_send_recv()
 
 		n = sock.recvfrom(&sock_addr, (void*) recv_buf, sizeof(recv_buf));
 
-		wait(3.0f);
+		wait(2.0f);
 	}
 #endif
 
