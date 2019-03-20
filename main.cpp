@@ -25,6 +25,7 @@
 // Number of retries /
 #define RETRY_COUNT 3
 
+DigitalOut TPB23_RESET(A1);
 NetworkInterface *iface;
 
 // Echo server hostname
@@ -211,6 +212,7 @@ nsapi_error_t test_send_recv()
 
 int main()
 {
+    TPB23_RESET = 0;    /* 0: Standby 1: Reset */
     print_function("\n\nmbed-os-example-cellular\n");
     print_function("\n\nBuilt: %s, %s\n", __DATE__, __TIME__);
 #ifdef MBED_CONF_NSAPI_DEFAULT_CELLULAR_PLMN
