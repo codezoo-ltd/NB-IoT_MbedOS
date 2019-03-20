@@ -184,7 +184,7 @@ nsapi_error_t test_send_recv()
     n = sock.recv((void*) recv_buf, sizeof(recv_buf));
 #else
 
-	for(int i=0; i<100; i++){
+	for(int i=0; i<10; i++){
 
 		retcode = sock.sendto(sock_addr, (void*) echo_string, sizeof(echo_string));
 		if (retcode < 0) {
